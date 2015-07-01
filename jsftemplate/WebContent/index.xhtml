@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+  <title><ui:insert name="title">Test</ui:insert></title>
+</head>
+
+<body>
+<h1>Blick in die Zukunft</h1>
+<h:form>
+<h:panelGrid>
+Ihr Gewicht in Kg:
+<h:inputText value="#{bmiBean.gewichtInKg}" id="inKg"></h:inputText>
+
+Ihre Koerpergroesse (in Cm):
+<h:inputText value="#{bmiBean.groesseInCm}" id="inCm"></h:inputText>
+
+<h:inputText id="bmiOut" value="#{bmiBean.bmi}" disabled="true"></h:inputText>
+</h:panelGrid>
+<h:commandButton action="#{bmiController.calculateFactor}"></h:commandButton>
+</h:form>
+</body>
+
+</html>
